@@ -1,4 +1,4 @@
-name = "texas-holdem-poker"
+name = "poker-online-multiplayer-game"
 main = "worker.js"
 compatibility_date = "2024-11-01"
 
@@ -7,7 +7,8 @@ compatibility_date = "2024-11-01"
 name = "POKER_TABLE"
 class_name = "PokerTable"
 
-# נדרש כדי שקלאודפלייר תדע ליצור את ה-Durable Object בפריסה הראשונה
+# בתוכנית Free, Durable Objects חייבים מיגרציה מגובה-SQLite (new_sqlite_classes),
+# לא את new_classes הישן (זה דורש תוכנית בתשלום). ראה קוד שגיאה 10097.
 [[migrations]]
 tag = "v1"
-new_classes = ["PokerTable"]
+new_sqlite_classes = ["PokerTable"]
